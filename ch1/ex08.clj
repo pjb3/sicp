@@ -1,9 +1,13 @@
-(defn cube [x] (* x x x))
+(ns sicp.ch1.ex08)
 
-(defn improve [x y] 
+(defn- cube [x] (* x x x))
+
+(defn- abs [n] (if (< n 0) (* n -1) n))
+
+(defn- improve [x y] 
   (/ (+ (/ x (* y y)) (* 2 y)) 3))
 
-(defn good-enough? [guess prev-guess x]
+(defn- good-enough? [guess prev-guess x]
   (< (abs (/ (- (cube guess) (cube prev-guess)) guess)) 0.001))
 
 (defn cbrt

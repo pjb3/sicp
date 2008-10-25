@@ -1,3 +1,5 @@
+(ns sicp.ch1.ex07)
+
 (defn- square [x] (* x x))
 
 (defn- average [x y] (/ (+ x y) 2))
