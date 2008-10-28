@@ -1,0 +1,13 @@
+(define (fizzbuzz) 
+  (define (add-pair n s l) 
+    (cons n (cons s l)))
+  (define (fizz-iter x l)
+    (if (< x 1) l
+	(cond ((= (remainder x 15) 0) 
+	       (fizz-iter (- x 1) (add-pair x "fizzbuzz" l)))
+	      ((= (remainder x 5) 0) 
+	       (fizz-iter (- x 1) (add-pair x "fizz" l)))
+	      ((= (remainder x 3) 0) 
+	       (fizz-iter (- x 1) (add-pair x "buzz" l)))
+	      (else (fizz-iter (- x 1) l)))))
+  (fizz-iter 100 ()))
