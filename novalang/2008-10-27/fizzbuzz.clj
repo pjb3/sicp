@@ -11,7 +11,7 @@
        (divisible-by-words x)
        (let [words 
 	     (apply str 
-		    (map #(if (divisible-by? x (first %1)) 
+		    (map #(if (divisible-by? x (first %)) 
 			    (last %) nil) word-map))]
 	 (if (= words "") x words)))))
 
