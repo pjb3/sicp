@@ -84,3 +84,21 @@
 (A 2 4)
 ;see previous example
 
+(define (f n) (A 0 n)) ;2n
+(define (g n) (A 1 n)) ;2^n if x > 0
+(define (h n) (A 2 n)) ;2^(2^(n-1)) if x > 0
+
+(A 2 0) ;0      (A 1 0) 0
+(A 2 1) ;2      (A 1 1) 2
+(A 2 2) ;4      (A 1 2) 4 
+(A 2 3) ;16     (A 1 4) 16
+(A 2 4) ;65536  (A 1 16) 65536
+(A 2 5) ;too much (A 1 65536)
+
+(A 2 4)
+(A 1 16)
+
+(A 2 5)
+(A 1 (A 2 4))
+(A 1 (A 1 16))
+(A 1 65536)
