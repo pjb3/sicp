@@ -1,0 +1,1 @@
+(define (compose f g) (lambda (n) (f (g n))))

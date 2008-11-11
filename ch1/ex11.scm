@@ -1,0 +1,26 @@
+(define (f-recur n)
+  (if (< n 3)
+      n
+      (+ (f-recur (- n 1))
+	 (* 2 (f-recur (- n 2)))
+	 (* 3 (f-recur (- n 3))))))
+
+(define (f-iter n)
+  (define (iter a b c n)
+    (if (= n 0)
+	a
+	(iter b c (+ c (* 2 b) (* 3 a)) (- n 1))))
+  (iter 0 1 2 n))
+
+(f-iter 5)
+;(iter 0 1 2 5)
+;(iter 1 2 (+ 2 (* 2 1) (* 3 0)) (- 5 1))
+;(iter 1 2 4 4)
+;(iter 2 4 (+ 4 (* 2 2) (* 3 1)) (- 4 1))
+;(iter 2 4 11 3)
+;(iter 4 11 (+ 11 (* 2 4) (* 3 2)) (- 3 1))
+;(iter 4 11 25 2)
+;(iter 11 25 (+ 25 (* 2 11) (* 3 4)) (- 2 1))
+;(iter 11 25 59 1)
+;(iter 25 59 (+ 59 (* 2 25) (* 3 11)) (- 1 1))
+;(iter 25 59 142 0)
