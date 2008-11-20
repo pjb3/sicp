@@ -9,7 +9,7 @@
 (inc 8)
 9
 
-;iterative
+;iterativex
 (+ 4 5)
 (+ 3 6)
 (+ 2 7)
