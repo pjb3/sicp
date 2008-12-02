@@ -31,5 +31,5 @@
 (define (make-rat n d)
   (let ((g (gcd (abs n) (abs d))))
     (cons (/ (* (abs n) 
-		(if (< (* n d) 0) -1 1)) g) 
+		(if (< (* n d) 0) -1 1)) g)
 	  (/ (abs d) g))))
