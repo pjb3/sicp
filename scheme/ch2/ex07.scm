@@ -1,4 +1,4 @@
-;Other functions
+;given
 (define (make-interval a b) (cons a b))
 (define (make-interval-from-tolerance ohms tolerance)
   (make-interval (- ohms (* ohms tolerance))
