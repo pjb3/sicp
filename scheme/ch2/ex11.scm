@@ -1,0 +1,22 @@
+(define (mul-interval x y)
+  (let ((lx (lower-bound x))
+	(ly (lower-bound y))
+	(ux (upper-bound x))
+	(uy (upper-bound y))
+	(lx+? (positive? lx))
+	(ly+? (positive? ly))
+	(ux+? (positive? ux))
+	(uy+? (positive? uy)))
+    (cond ((and lx+? ly+? ux+? uy+?) 
+	   (make-interval (* lx ly) (* ux uy)))
+	  ((and (not lx+?) ly+? ux+? uy+?)
+	   (make-interval (*lx uy) (* ux uy))
+	  ((and (not lx+?) (not ly+?) ux+? uy+?)
+	  ((and (not lx+?) (not ly+?) (not ux+?) uy+?)
+	  ((and (not lx+?) (not ly+?) (not ux+?) (not uy+?))
+	  ((and lx+? ly+? (not ux+?) (not uy+?))
+	  ((and lx+? ly+? (not ux+?) uy+?))
+    )))
+	  
+    
+    
